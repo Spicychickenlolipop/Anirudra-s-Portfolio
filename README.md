@@ -138,25 +138,5 @@ Guidelines:
 - Keep changes small and focused.
 - Run `npm run lint` before submitting.
 
-## Screenshots & Media
-
-Place screenshots inside `public/images/screenshots/` and reference them in this README or the `public/` demo pages. Example Markdown:
-
-```markdown
-![Desktop view](public/images/screenshots/desktop.png)
-```
-
-## License & Contact
-
-Add a license file if you want to open-source this project (e.g., `MIT`). For contact, update the `Contact` window content in `src/windows/Contact.jsx` or mention your email in this README.
-
----
-
-If you'd like, I can:
-
-- add example screenshots to `public/images/screenshots/` and update this README with embedded images;
-- create a small `DEPLOY.md` with step-by-step deploy instructions for Vercel/Netlify/GitHub Pages;
-- commit the README and open a PR.
 
 
->>>>>>> bc06e15 (Updated portfolio)
