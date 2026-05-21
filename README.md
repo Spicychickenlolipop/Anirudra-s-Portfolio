@@ -15,8 +15,6 @@ This repository contains a personal, macOS-inspired portfolio web app built with
 - Assets
 - Deployment
 - Troubleshooting
-- Contributing
-- License & Contact
 
 ## Project Overview
 
