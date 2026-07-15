@@ -1,140 +1,298 @@
-# Portfolio — macOS-style Interactive Portfolio
+# Anirudra's Portfolio
 
-This repository contains a personal, macOS-inspired portfolio web app built with React and Vite. The UI mimics a desktop environment with floating windows, a dock, window controls, and small single-purpose apps (Finder, Photos, Terminal, Resume viewer, Contact form, etc.). It demonstrates interactive UI patterns, animations, and lightweight state management.
+> An interactive portfolio that turns a personal website into a playful desktop experience.
 
-## Table of Contents
+Built around a macOS-inspired interface, this portfolio lets visitors explore projects, skills, photos, a résumé, and contact details through familiar desktop apps instead of a conventional scrolling page. On phones, the experience adapts into a focused, iPhone-inspired home screen and app layout.
 
-- Project Overview
-- Features
-- Tech Stack
-- Quick Start
-- Development
-- Project Structure (detailed)
-- Styling & Animations
-- State Management
-- Assets
-- Deployment
-- Troubleshooting
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
+[![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-## Project Overview
+## Contents
 
-The app is a portfolio presented as a mini desktop. Each app-window is a focused example (e.g., `Photos` shows an image gallery, `Finder` lists files, `Terminal` shows a mock terminal). The goal is to present work and media in a playful, interactive way while demonstrating React patterns and animations.
+- [Overview](#overview)
+- [Highlights](#highlights)
+- [Explore the portfolio](#explore-the-portfolio)
+- [Tech stack](#tech-stack)
+- [Getting started](#getting-started)
+- [Available scripts](#available-scripts)
+- [Project structure](#project-structure)
+- [Architecture](#architecture)
+- [Customizing the portfolio](#customizing-the-portfolio)
+- [Deployment](#deployment)
+- [Accessibility and browser support](#accessibility-and-browser-support)
+- [Contributing](#contributing)
+- [Contact](#contact)
 
-## Features
+## Overview
 
-- Desktop-like UI with draggable, resizable, and focusable windows.
-- Dock and app launcher for opening/closing windows.
-- Multiple windowed apps: `Finder`, `Photos`, `Resume`, `Contact`, `Terminal`, `TextFile`, `ImageFile`, `Search`, `Trash`, etc.
-- Responsive and mobile-adapted layout with `MobileShell` and `MobileNavBar` components.
-- Built-in music player and static file hosting via `public/`.
-- Smooth animations using GSAP and Tailwind CSS utilities.
+Most portfolios describe the developer; this one invites people to explore their work. The landing view resembles a desktop, complete with a draggable project area, dock, menu bar, floating application windows, and familiar window controls. Each application has a clear purpose:
 
-## Tech Stack
+- **Portfolio / Finder** provides a file-system-style route into projects and personal information.
+- **Safari** presents writing and web content.
+- **Gallery** displays selected images.
+- **Skills Terminal** is an interactive command-line interface for discovering skills, projects, and other apps.
+- **Résumé** renders the included PDF directly in the experience.
+- **Contact** centralizes ways to get in touch.
+- **Trash** provides an additional interactive desktop destination.
 
-- React 19
-- Vite (dev server & build)
-- Tailwind CSS for styling
-- Zustand for state management
-- GSAP for animations
-- ESLint for linting
+The experience is not just a visual mockup. Its windows can be opened, focused, minimized, maximized where supported, and dragged on desktop. State is managed centrally so applications can open one another—for example, terminal commands can launch the project finder, résumé, contact view, or gallery.
 
-## Quick Start
+## Highlights
 
-Prerequisites: Node.js 18+ recommended.
+- A responsive, macOS-inspired desktop portfolio with animated floating windows.
+- Draggable desktop windows with focus-aware stacking order.
+- A purpose-built mobile layout that feels like an iPhone home screen rather than a squeezed desktop.
+- Interactive finder-style project explorer, including project descriptions, images, source repositories, and live demos where available.
+- A functional simulated terminal with command history and tab completion.
+- Project, skills, social, gallery, and navigation content organized in one editable constants module.
+- PDF résumé viewer powered by `react-pdf`.
+- Lightweight static architecture: no backend is required for deployment.
+- Smooth motion and interactions powered by GSAP and `@gsap/react`.
 
-Install dependencies:
+## Explore the portfolio
+
+### Desktop
+
+Open an app from the dock or menu bar. Desktop project folders can be clicked and dragged, while application windows can be brought to the front and repositioned from their title bars.
+
+| Area | What it does |
+| --- | --- |
+| Finder / Portfolio | Browse project folders, personal information, and résumé files. |
+| Safari | View curated external content and links. |
+| Gallery | Browse portfolio images. |
+| Skills Terminal | Run discoverability commands and open portfolio apps from the command line. |
+| Contact | Find social links and contact details. |
+| Control Center | Access desktop control interactions. |
+
+### Mobile
+
+At small screen sizes, the desktop is replaced by an iPhone-inspired shell. Selecting an app opens it in a mobile-optimized view; the home indicator returns the visitor to the app grid. This separate experience avoids the usability problems that come from forcing desktop windows into a narrow viewport.
+
+### Terminal commands
+
+The Skills Terminal is intentionally small but interactive. Type `help` to see the available commands.
+
+| Command | Description |
+| --- | --- |
+| `help` | Lists available commands. |
+| `whoami` | Introduces the developer. |
+| `skills` | Prints the configured technology stack. |
+| `projects` | Lists portfolio projects. |
+| `open projects` | Opens the project finder. |
+| `open resume` | Opens the résumé viewer. |
+| `open contact` | Opens the contact window. |
+| `open gallery` | Opens the gallery. |
+| `ls`, `cd`, `pwd`, `cat` | Navigate the mock file system. |
+| `clear` | Clears terminal history. |
+
+Use the up/down arrow keys to cycle through previous commands. Press <kbd>Tab</kbd> to complete a matching command or file-system entry.
+
+## Tech stack
+
+| Category | Tools |
+| --- | --- |
+| UI | React 19, React DOM, Lucide React |
+| Build tooling | Vite 8, `@vitejs/plugin-react` |
+| Styling | Tailwind CSS 4, Tailwind Animate, CSS |
+| Motion | GSAP, `@gsap/react`, GSAP Draggable |
+| State | Zustand, Immer |
+| Content utilities | Day.js, React PDF, React Tooltip |
+| Quality | ESLint and React Hooks lint rules |
+
+## Getting started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) 18 or newer (Node 20+ is recommended)
+- npm, which is bundled with Node.js
+
+### Installation
 
 ```bash
+git clone https://github.com/Spicychickenlolipop/Anirudra-s-Portfolio.git
+cd Anirudra-s-Portfolio
 npm install
 ```
 
-Start the development server (HMR enabled):
+### Run locally
 
 ```bash
 npm run dev
 ```
 
-Open the URL shown by Vite (commonly `http://localhost:5173`). To build a production bundle:
+Vite will print the local address in the terminal—normally [http://localhost:5173](http://localhost:5173). Changes to source files are reflected through hot module replacement.
+
+### Production build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Development
+The optimized static site is generated in `dist/`. Preview it locally before deploying.
 
-- Lint the codebase:
+## Available scripts
+
+| Script | Purpose |
+| --- | --- |
+| `npm run dev` | Starts the Vite development server with HMR. |
+| `npm run build` | Creates an optimized production build in `dist/`. |
+| `npm run preview` | Serves the production build locally. |
+| `npm run lint` | Runs ESLint across the project. |
+
+Before submitting changes, run:
 
 ```bash
 npm run lint
+npm run build
 ```
 
-- The app entry is `src/main.jsx` which mounts `App.jsx`.
-- Global styles are in `src/index.css` (Tailwind directives are applied here).
+## Project structure
 
-Notes about common dev issues:
-- If the dev server fails to start, check that no other process is using the port (usually 5173) or set a custom port with `vite --port <port>`.
+```text
+.
+├── public/
+│   ├── files/                 # Static files, including the résumé PDF
+│   ├── icons/                 # UI, social, and app icons
+│   ├── images/                # Portfolio, project, and gallery images
+│   └── music/                 # Audio player assets
+├── src/
+│   ├── components/            # Shared UI: dock, nav, home, music, mobile shell
+│   ├── constants/index.js     # Portfolio content and window configuration
+│   ├── hoc/WindowWrapper.jsx  # Shared window visibility, animation, and drag logic
+│   ├── hooks/useIsMobile.js   # Responsive-mode hook
+│   ├── store/                 # Zustand stores for windows, location, controls, trash
+│   ├── windows/               # Finder, Terminal, Safari, Resume, Photos, and more
+│   ├── App.jsx                # Desktop/mobile shell and window composition
+│   ├── index.css              # Global styling and Tailwind entry point
+│   └── main.jsx               # React application entry point
+├── vite.config.js             # Vite, React, Tailwind, and import alias configuration
+├── eslint.config.js           # Lint configuration
+└── package.json               # Dependencies and npm scripts
+```
 
-## Project Structure (detailed)
+## Architecture
 
-- `index.html` — Vite HTML entry.
-- `src/main.jsx` — React entry; mounts the app.
-- `src/App.jsx` — Top-level application shell.
-- `src/index.css` — Tailwind + base styles.
-- `src/components/` — Reusable UI components:
-	- `Navbar.jsx` — top navigation
-	- `Dock.jsx` — app dock
-	- `ControlCenter.jsx`, `WindowControls.jsx` — window chrome
-	- `MobileShell.jsx`, `MobileNavBar.jsx` — mobile adaptations
-- `src/windows/` — App windows (each acts like a mini app):
-	- `Finder.jsx`, `Photos.jsx`, `Terminal.jsx`, `Resume.jsx`, `Contact.jsx`, `Trash.jsx`, `TextFile.jsx`, `ImageFile.jsx`, `Search.jsx`
-- `src/store/` — Zustand stores that manage global state
-	- `window.js` — window z-index, positions, open/close
-	- `control.js`, `location.js`, `trash.js` — app-specific stores
-- `src/hooks/` — custom hooks like `useIsMobile.js`.
-- `src/hoc/WindowWrapper.jsx` — wrapper that provides drag/resize and focus handling.
-- `public/` — static assets (icons, images, music, files). Place additional media here.
+### Window system
 
-## Styling & Animations
+Every app window is composed with `WindowWrapper`. The wrapper is responsible for consistent open/close behavior, desktop animations, visibility while minimized, focus ordering, and title-bar dragging. Individual app components focus only on their content and window-specific actions.
 
-- Tailwind CSS powers most of the styling; configuration is at the project root (check `tailwind.config.js` if present).
-- Animations use GSAP for fluid entrance/exit and window motion. See components for examples where `gsap` or `@gsap/react` is used.
+The shared `window` Zustand store tracks whether each window is open, minimized, or maximized, as well as its `z-index` and contextual data. This creates a familiar desktop behavior: interacting with a window brings it forward, and one app can open another without tightly coupling components.
 
-## State Management
+### Content model
 
-- Global UI state is kept with `zustand` stores under `src/store/`.
-- Each store is focused (single responsibility) — e.g., `window.js` manages window stacking, active window, and positions.
+Portfolio content is mostly data-driven. Update `src/constants/index.js` to change:
 
-## Assets
+- Navigation links and dock applications
+- Social profiles
+- Gallery images
+- Skills shown in the terminal
+- Project folders, descriptions, source links, demos, and previews
+- Finder locations and initial window settings
 
-- Put images, icons, and audio in `public/images`, `public/icons`, and `public/music`.
-- The `public/files` folder is used by the `Finder` and other demo apps for example file data.
+Keeping this information centralized makes it straightforward to keep the Finder, terminal, desktop icons, and mobile shell aligned.
+
+### Import aliases
+
+The project uses Vite aliases to keep imports readable:
+
+```js
+import { Navbar, Dock } from "#components";
+import useWindowStore from "#store/window";
+import { locations } from "#constants";
+```
+
+The aliases are configured in `vite.config.js` for components, constants, stores, higher-order components, and windows.
+
+## Customizing the portfolio
+
+This project is designed to be personalized. The following is a practical checklist for adapting it to your own work.
+
+### Update personal details and links
+
+Edit the `socials` list and the `ABOUT_LOCATION` content in `src/constants/index.js`. Update the GitHub, LinkedIn, X/Twitter, and email URLs, plus the text shown in `about-me.txt`.
+
+### Add or update a project
+
+Project folders live inside `WORK_LOCATION.children` in `src/constants/index.js`. A typical project contains:
+
+```js
+{
+  name: "My Project",
+  icon: "/images/folder.png",
+  kind: "folder",
+  children: [
+    {
+      name: "My Project.txt",
+      kind: "file",
+      fileType: "txt",
+      description: ["A concise description of the project."],
+    },
+    {
+      name: "live-demo.com",
+      kind: "file",
+      fileType: "url",
+      href: "https://example.com",
+    },
+    {
+      name: "My Project.png",
+      kind: "file",
+      fileType: "img",
+      imageUrl: "/images/my-project.png",
+    },
+  ],
+}
+```
+
+Add the corresponding image to `public/images/`. Public assets are served from the site root, so an image at `public/images/my-project.png` is referenced as `/images/my-project.png`.
+
+### Replace the résumé
+
+Replace `public/files/resume.pdf` with your own PDF while preserving the filename, or update the relevant file reference in the résumé window and constants if you prefer another name.
+
+### Change the visual theme
+
+Global styles reside in `src/index.css`. Component-specific layouts are implemented with Tailwind utility classes. The desktop wallpaper, icon set, project previews, and gallery are all static assets under `public/`.
 
 ## Deployment
 
-This is a static SPA. Build and deploy the `dist/` folder.
+This is a static React single-page application. Any host capable of serving the contents of `dist/` can deploy it.
 
-Common hosts:
-- Vercel: Connect the repo and set the build command to `npm run build` and the output directory to `dist`.
-- Netlify: Use `npm run build` as the build command and `dist` as the publish directory.
-- GitHub Pages: Build and push `dist` to the `gh-pages` branch (or use an action to deploy).
+| Host | Build command | Publish directory |
+| --- | --- | --- |
+| Vercel | `npm run build` | `dist` |
+| Netlify | `npm run build` | `dist` |
+| Cloudflare Pages | `npm run build` | `dist` |
+| GitHub Pages | `npm run build` | `dist` |
 
-## Troubleshooting
+For GitHub Pages under a repository subpath, configure Vite's `base` option in `vite.config.js` before building:
 
-- Vite HMR not updating: ensure `node_modules` is installed and there are no conflicting versions of React.
-- Styling missing: confirm `index.css` imports Tailwind base, components, and utilities and that Tailwind is configured in `postcss` if applicable.
+```js
+export default defineConfig({
+  base: "/Anirudra-s-Portfolio/",
+  // remaining configuration
+});
+```
+
+Do not add this `base` value for a custom domain or root-level deployment.
+
+## Accessibility and browser support
+
+Interactive mobile app icons include accessible labels, and decorative icon images use empty `alt` text. When adding new interactive controls, keep keyboard operation, visible focus states, and descriptive labels in mind.
+
+For the smoothest animation and drag behavior, use a current Chromium-based browser, Firefox, or Safari. The site remains a standard responsive web application; no native desktop software is required.
 
 ## Contributing
 
-If you'd like to improve the project:
+Contributions, fixes, and thoughtful improvements are welcome.
 
-1. Fork the repo
-2. Create a feature branch
-3. Open a PR with a clear description
+1. Fork the repository.
+2. Create a branch for your change: `git checkout -b feature/your-feature`.
+3. Make focused changes and keep the existing code style.
+4. Run `npm run lint` and `npm run build`.
+5. Open a pull request that clearly explains the change and includes screenshots for visual updates.
 
-Guidelines:
-- Keep changes small and focused.
-- Run `npm run lint` before submitting.
+## License
 
-
-
+No license has been specified for this repository. Before reusing the code, design, or personal assets, please contact the author for permission.
