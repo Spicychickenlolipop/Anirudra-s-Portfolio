@@ -1,5 +1,5 @@
-import { Mail } from "lucide-react";
-import { useEffect } from "react";
+import { Mail, Maximize2 } from "lucide-react";
+import { useEffect, useState } from "react";
 
 import WindowWrapper from "#hoc/WindowWrapper";
 import WindowControls from "#components/WindowControls";
@@ -9,6 +9,7 @@ import useWindowStore from "#store/window";
 const Photos = () => {
   const email = "kisku.anirudra@gmail.com";
   const { openWindow } = useWindowStore();
+  const [contextMenu, setContextMenu] = useState(null);
 
   const setWallpaper = (img) => {
     document.body.style.backgroundImage = `url(${img})`;
@@ -16,6 +17,7 @@ const Photos = () => {
     document.body.style.backgroundPosition = "center";
     document.body.style.transition = "background-image 0.5s ease-in-out";
     localStorage.setItem("wallpaper", img);
+    setContextMenu(null);
   };
 
   useEffect(() => {
@@ -30,10 +32,30 @@ const Photos = () => {
       gallery,
       index: idx,
     });
+    setContextMenu(null);
   };
 
+  const handleContextMenu = (e, item, idx) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setContextMenu({
+      x: e.clientX,
+      y: e.clientY,
+      item,
+      idx,
+    });
+  };
+
+  useEffect(() => {
+    const handleClickOutside = () => setContextMenu(null);
+    if (contextMenu) {
+      document.addEventListener("click", handleClickOutside);
+      return () => document.removeEventListener("click", handleClickOutside);
+    }
+  }, [contextMenu]);
+
   return (
-    <div className="photos-window flex flex-col h-full min-h-0 w-full bg-white">
+    <div className="photos-window flex flex-col h-full min-h-0 w-full bg-white relative">
       {/* Desktop macOS title bar */}
       <div
         id="window-header"
@@ -61,6 +83,7 @@ const Photos = () => {
                   e.stopPropagation();
                   openImage(item, idx);
                 }}
+                onContextMenu={(e) => handleContextMenu(e, item, idx)}
                 aria-label={`View photo ${item.id}`}
               >
                 <img
@@ -75,6 +98,32 @@ const Photos = () => {
           ))}
         </ul>
       </div>
+
+      {/* Context Menu */}
+      {contextMenu && (
+        <div
+          className="fixed bg-white border border-gray-200 rounded-lg shadow-xl z-[10000] min-w-[200px] overflow-hidden"
+          style={{
+            left: `${Math.min(contextMenu.x, window.innerWidth - 220)}px`,
+            top: `${Math.min(contextMenu.y, window.innerHeight - 120)}px`,
+          }}
+        >
+          <button
+            className="w-full text-left px-4 py-2 text-sm hover:bg-blue-50 flex items-center gap-2 border-b border-gray-100"
+            onClick={() => openImage(contextMenu.item, contextMenu.idx)}
+          >
+            <Maximize2 size={14} />
+            View Photo
+          </button>
+          <button
+            className="w-full text-left px-4 py-2 text-sm hover:bg-blue-50 flex items-center gap-2"
+            onClick={() => setWallpaper(contextMenu.item.img)}
+          >
+            <span>🖼️</span>
+            Set as Wallpaper
+          </button>
+        </div>
+      )}
     </div>
   );
 };

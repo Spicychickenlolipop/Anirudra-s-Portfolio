@@ -44,7 +44,7 @@ const dockApps = [
   },
   {
     id: "safari",
-    name: "Articles", // was "Safari"
+    name: "Safari", // was "Safari"
     icon: "safari.png",
     canOpen: true,
   },
@@ -142,7 +142,7 @@ const socials = [
   },
   {
     id: 2,
-    text: "Platform",
+    text: "Mail",
     icon: "/icons/atom.svg",
     bg: "#4bcb63",
     link: "https://mail.google.com/mail/u/0/?fs=1&to=kisku.anirudra@gmail.com&tf=cm",
@@ -198,7 +198,7 @@ const gallery = [
 
 const mobileAppTitles = {
   finder: "Portfolio",
-  safari: "Articles",
+  safari: "Safari",
   photos: "Gallery",
   contact: "Contact",
   terminal: "Skills",
@@ -244,11 +244,11 @@ const WORK_LOCATION = {
           position: "top-5 left-10",
           description: [
             [
-  "ExamNoteAI is a smart learning platform designed to generate clear, exam-ready notes from any topic.",
-  "Instead of spending hours summarizing content, it uses AI to instantly generate structured, easy-to-understand notes.",
-  "Think of it as your personal study assistant—helping you focus on understanding instead of just organizing.",
-  "Built with modern technologies, it delivers fast performance, a smooth user experience, and a clean, distraction-free interface."
-]
+              "ExamNoteAI is a smart learning platform designed to generate clear, exam-ready notes from any topic.",
+              "Instead of spending hours summarizing content, it uses AI to instantly generate structured, easy-to-understand notes.",
+              "Think of it as your personal study assistant—helping you focus on understanding instead of just organizing.",
+              "Built with modern technologies, it delivers fast performance, a smooth user experience, and a clean, distraction-free interface."
+            ]
           ],
         },
         {
@@ -269,15 +269,15 @@ const WORK_LOCATION = {
           position: "top-52 right-80",
           imageUrl: "/images/ExamNoteAI.png",
         },
-        // {
-        //   id: 5,
-        //   name: "Design.fig",
-        //   icon: "/images/plain.png",
-        //   kind: "file",
-        //   fileType: "fig",
-        //   href: "https://google.com",
-        //   position: "top-60 right-20",
-        // },
+        {
+          id: 5,
+          name: "github.com",
+          icon: "/images/github.png",
+          kind: "file",
+          fileType: "fig",
+          href: "https://github.com/Spicychickenlolipop/ExamNotesAI",
+          position: "top-60 right-20",
+        },
       ],
     },
 
@@ -298,11 +298,11 @@ const WORK_LOCATION = {
           fileType: "txt",
           position: "top-5 right-10",
           description: [
-  "QuickChat is a fast and intuitive messaging platform designed for seamless real-time communication.",
-  "Instead of slow and cluttered chat apps, it delivers instant messaging with a clean interface and smooth interactions.",
-  "Think of it like your personal chat space—simple, responsive, and built to keep conversations flowing effortlessly.",
-  "Built with modern technologies, it ensures speed, reliability, and a sleek experience across all devices."
-]
+            "QuickChat is a fast and intuitive messaging platform designed for seamless real-time communication.",
+            "Instead of slow and cluttered chat apps, it delivers instant messaging with a clean interface and smooth interactions.",
+            "Think of it like your personal chat space—simple, responsive, and built to keep conversations flowing effortlessly.",
+            "Built with modern technologies, it ensures speed, reliability, and a sleek experience across all devices."
+          ]
         },
         {
           id: 2,
@@ -322,15 +322,15 @@ const WORK_LOCATION = {
           position: "top-52 left-80",
           imageUrl: "/images/QuickChat.png",
         },
-        // {
-        //   id: 5,
-        //   name: "Design.fig",
-        //   icon: "/images/plain.png",
-        //   kind: "file",
-        //   fileType: "fig",
-        //   href: "https://google.com",
-        //   position: "top-60 left-5",
-        // },
+        {
+          id: 5,
+          name: "github.com",
+          icon: "/images/github.png",
+          kind: "file",
+          fileType: "fig",
+          href: "https://github.com/Spicychickenlolipop/chat-app",
+          position: "top-60 left-5",
+        },
       ],
     },
 
@@ -340,8 +340,8 @@ const WORK_LOCATION = {
       name: "Expense Tracker",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 left-80",
-      windowPosition: "top-[33vh] left-7",
+      position: "top-52 left-5",
+      windowPosition: "top-[33vh] left-3",
       children: [
         {
           id: 1,
@@ -351,11 +351,11 @@ const WORK_LOCATION = {
           fileType: "txt",
           position: "top-5 left-10",
           description: [
-  "Expense Tracker is a simple and efficient tool designed to help you manage your daily finances with ease.",
-  "Instead of guessing where your money goes, it gives you a clear view of your income, expenses, and spending patterns.",
-  "Think of it like your personal finance companion—keeping everything organized and under control.",
-  "Built with modern technologies, it offers a smooth experience, fast performance, and a clean, user-friendly interface."
-]
+            "Expense Tracker is a simple and efficient tool designed to help you manage your daily finances with ease.",
+            "Instead of guessing where your money goes, it gives you a clear view of your income, expenses, and spending patterns.",
+            "Think of it like your personal finance companion—keeping everything organized and under control.",
+            "Built with modern technologies, it offers a smooth experience, fast performance, and a clean, user-friendly interface."
+          ]
         },
         {
           id: 2,
@@ -375,6 +375,58 @@ const WORK_LOCATION = {
           position: "top-52 right-80",
           imageUrl: "/images/ExpenseTracker.png",
         },
+        {
+          id: 5,
+          name: "github.com",
+          icon: "/images/github.png",
+          kind: "file",
+          fileType: "fig",
+          href: "https://google.com",
+          position: "top-60 right-20",
+        },
+      ],
+    },
+    // ▶ Project 4
+    {
+      id: 8,
+      name: "VectorForge",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-10 left-40",
+      windowPosition: "top-[5vh] left-35",
+      children: [
+        {
+          id: 1,
+          name: "VectorForge.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          position: "top-5 left-10",
+          description: [
+            "Engineered a vector database from scratch in C++, implementing HNSW, KD-Tree, and Brute Force nearest-neighbor search algorithms with cosine, Euclidean, and Manhattan distance metrics, exposed via a full REST API (insert, delete, search, benchmark endpoints).",
+            "Built a Retrieval-Augmented Generation (RAG) pipeline integrating a local LLM (Ollama/Llama 3.2) with a custom HNSW index, enabling document embedding (nomic-embed-text, 768D), automatic text chunking, and context-grounded question answering.",
+            "Designed an interactive web UI featuring live PCA-based 2D visualization of high-dimensional semantic vector space, real-time algorithm benchmarking/comparison, and a streaming chat interface for RAG queries.",
+            " Implemented performance-critical data structures achieving O(log N) approximate search via a multilayer graph-based HNSW index, demonstrating algorithmic trade-offs (exact vs. approximate search) across dimensionality (16D demo vs. 768D document embeddings)."
+          ]
+        },
+        {
+          id: 2,
+          name: "github.com",
+          icon: "/images/github.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://github.com/Spicychickenlolipop/VectorForge",
+          position: "top-10 right-20",
+        },
+        {
+          id: 4,
+          name: "VectorForge.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-52 right-80",
+          imageUrl: "/images/VectorForge.png",
+        },
         // {
         //   id: 5,
         //   name: "Design.fig",
@@ -386,6 +438,59 @@ const WORK_LOCATION = {
         // },
       ],
     },
+     // ▶ Project 4
+    {
+      id: 9,
+      name: "DPI Engine",
+      icon: "/images/folder.png",
+      kind: "folder",
+      position: "top-10 left-75",
+      windowPosition: "top-[20vh] left-35",
+      children: [
+        {
+          id: 1,
+          name: "DPI Engine.txt",
+          icon: "/images/txt.png",
+          kind: "file",
+          fileType: "txt",
+          position: "top-5 left-10",
+          description: [
+            "Built a multi-threaded C++ Deep Packet Inspection engine that classifies and filters network traffic by inspecting TLS SNI and HTTP Host headers.",
+            "D Implemented a producer-consumer pipeline with load balancers and fast-path worker threads using consistent hashing for flow-aware packet routing.",
+            "Engineered thread-safe queues with mutex and condition variables to enable high-throughput parallel processing of PCAP captures.",
+            "Supported rule-based blocking by IP, application, and domain with real-time traffic statistics and application classification reporting."
+          ]
+        },
+        {
+          id: 2,
+          name: "github.com",
+          icon: "/images/github.png",
+          kind: "file",
+          fileType: "url",
+          href: "https://github.com/Spicychickenlolipop/Packet-Analyzer",
+          position: "top-10 right-20",
+        },
+        {
+          id: 4,
+          name: "Demo Output.png",
+          icon: "/images/image.png",
+          kind: "file",
+          fileType: "img",
+          position: "top-52 right-80",
+          imageUrl: "/images/DPI Engine.png",
+        },
+        // {
+        //   id: 5,
+        //   name: "Design.fig",
+        //   icon: "/images/plain.png",
+        //   kind: "file",
+        //   fileType: "fig",
+        //   href: "https://google.com",
+        //   position: "top-60 right-20",
+        // },
+      ],
+    },
+
   ],
 };
 
@@ -403,7 +508,7 @@ const ABOUT_LOCATION = {
       kind: "file",
       fileType: "img",
       position: "top-10 left-5",
-      imageUrl: "/images/adrian.jpg",
+      imageUrl: "/images/me.jpg",
     },
     {
       id: 2,
@@ -431,7 +536,7 @@ const ABOUT_LOCATION = {
       fileType: "txt",
       position: "top-60 left-5",
       subtitle: "Meet the Developer Behind the Code",
-      image: "/images/adrian.jpg",
+      image: "/images/me.jpg",
       description: [
         [
           "Hey! I’m Anirudra 👋, a developer who enjoys building cool, interactive websites that just feel right.",

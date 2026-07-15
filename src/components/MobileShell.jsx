@@ -5,7 +5,7 @@ import useWindowStore from "#store/window";
 import useLocationStore from "#store/location";
 import { locations } from "#constants";
 
-const DOCK_APPS = dockApps.filter((a) => a.canOpen).slice(0, 4);
+const DOCK_APPS = dockApps.filter((a) => a.canOpen && ["finder", "safari", "contact", "trash"].includes(a.id));
 const HOME_APPS = dockApps.filter((a) => a.canOpen);
 
 const MobileShell = () => {
@@ -77,10 +77,10 @@ const MobileShell = () => {
             ))}
           </div>
 
-          <div className="ios-page-dots" aria-hidden="true">
+          {/* <div className="ios-page-dots" aria-hidden="true">
             <span className="active" />
             <span />
-          </div>
+          </div> */}
 
           <div className="ios-dock">
             {DOCK_APPS.map((app) => (

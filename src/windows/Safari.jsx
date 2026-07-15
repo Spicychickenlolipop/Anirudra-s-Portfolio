@@ -10,11 +10,11 @@ import {
 
 /* ⭐ FAVORITES */
 const favorites = [
-  { name: "Website", icon: "/icons/web.png", url: "https://yourportfolio.com" },
-  { name: "GitHub", icon: "/icons/github.png", url: "https://github.com" },
-  { name: "LinkedIn", icon: "/icons/linkedin.png", url: "https://linkedin.com" },
-  { name: "Twitter", icon: "/icons/twitter.png", url: "https://twitter.com" },
-  { name: "Email", icon: "/icons/mail.png", url: "mailto:you@email.com" },
+  { name: "Leetcode", icon: "/icons/leetcode.png", url: "https://leetcode.com/u/ANI0008/" },
+  { name: "GitHub", icon: "/icons/github.png", url: "https://github.com/Spicychickenlolipop" },
+  { name: "LinkedIn", icon: "/icons/linkedin.png", url: "https://www.linkedin.com/in/anirudra-kisku-4335821b5/" },
+  { name: "X", icon: "/icons/twitter.png", url: "https://x.com/AnirudraKi53795" },
+  { name: "Email", icon: "/icons/mail.png", url: "https://mail.google.com/mail/u/0/?fs=1&to=kisku.anirudra@gmail.com&tf=cm" },
 ];
 
 /* 🔁 FREQUENT */
