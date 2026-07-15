@@ -8,6 +8,10 @@ Built around a macOS-inspired interface, this portfolio lets visitors explore pr
 [![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
+
+<img width="1536" height="785" alt="image" src="https://github.com/user-attachments/assets/285b0dc2-6403-4b55-8730-0257db21a3c3" />
+
+
 ## Contents
 
 - [Overview](#overview)
