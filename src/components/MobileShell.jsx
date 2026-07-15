@@ -6,7 +6,9 @@ import useLocationStore from "#store/location";
 import { locations } from "#constants";
 
 const DOCK_APPS = dockApps.filter((a) => a.canOpen && ["finder", "safari", "contact", "trash"].includes(a.id));
-const HOME_APPS = dockApps.filter((a) => a.canOpen);
+// Gallery remains available on desktop, but is intentionally excluded from the
+// mobile home screen.
+const HOME_APPS = dockApps.filter((a) => a.canOpen && a.id !== "photos");
 
 const MobileShell = () => {
   const { windows, openWindow, closeAllWindows } = useWindowStore();
