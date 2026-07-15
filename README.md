@@ -22,7 +22,6 @@ Built around a macOS-inspired interface, this portfolio lets visitors explore pr
 - [Deployment](#deployment)
 - [Accessibility and browser support](#accessibility-and-browser-support)
 - [Contributing](#contributing)
-- [Contact](#contact)
 
 ## Overview
 
