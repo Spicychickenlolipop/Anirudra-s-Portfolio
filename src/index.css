@@ -860,9 +860,6 @@ input, textarea {
         @apply text-sm font-semibold text-gray-800 truncate;
       }
 
-      .finder-back-btn {
-        @apply shrink-0 text-xs text-blue-600 font-medium px-2 py-1 rounded-md bg-blue-50 border-0 cursor-pointer;
-      }
     }
 
     .finder-content {

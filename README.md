@@ -8,6 +8,7 @@ Built around a macOS-inspired interface, this portfolio lets visitors explore pr
 [![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
+<<<<<<< HEAD
 
 <img width="1536" height="785" alt="image" src="https://github.com/user-attachments/assets/285b0dc2-6403-4b55-8730-0257db21a3c3" />
 
@@ -53,6 +54,50 @@ The experience is not just a visual mockup. Its windows can be opened, focused, 
 - Lightweight static architecture: no backend is required for deployment.
 - Smooth motion and interactions powered by GSAP and `@gsap/react`.
 
+=======
+## Contents
+
+- [Overview](#overview)
+- [Highlights](#highlights)
+- [Explore the portfolio](#explore-the-portfolio)
+- [Tech stack](#tech-stack)
+- [Getting started](#getting-started)
+- [Available scripts](#available-scripts)
+- [Project structure](#project-structure)
+- [Architecture](#architecture)
+- [Customizing the portfolio](#customizing-the-portfolio)
+- [Deployment](#deployment)
+- [Accessibility and browser support](#accessibility-and-browser-support)
+- [Contributing](#contributing)
+- [Contact](#contact)
+
+## Overview
+
+Most portfolios describe the developer; this one invites people to explore their work. The landing view resembles a desktop, complete with a draggable project area, dock, menu bar, floating application windows, and familiar window controls. Each application has a clear purpose:
+
+- **Portfolio / Finder** provides a file-system-style route into projects and personal information.
+- **Safari** presents writing and web content.
+- **Gallery** displays selected images.
+- **Skills Terminal** is an interactive command-line interface for discovering skills, projects, and other apps.
+- **Résumé** renders the included PDF directly in the experience.
+- **Contact** centralizes ways to get in touch.
+- **Trash** provides an additional interactive desktop destination.
+
+The experience is not just a visual mockup. Its windows can be opened, focused, minimized, maximized where supported, and dragged on desktop. State is managed centrally so applications can open one another—for example, terminal commands can launch the project finder, résumé, contact view, or gallery.
+
+## Highlights
+
+- A responsive, macOS-inspired desktop portfolio with animated floating windows.
+- Draggable desktop windows with focus-aware stacking order.
+- A purpose-built mobile layout that feels like an iPhone home screen rather than a squeezed desktop.
+- Interactive finder-style project explorer, including project descriptions, images, source repositories, and live demos where available.
+- A functional simulated terminal with command history and tab completion.
+- Project, skills, social, gallery, and navigation content organized in one editable constants module.
+- PDF résumé viewer powered by `react-pdf`.
+- Lightweight static architecture: no backend is required for deployment.
+- Smooth motion and interactions powered by GSAP and `@gsap/react`.
+
+>>>>>>> 77a22c7 (fix back button)
 ## Explore the portfolio
 
 ### Desktop
@@ -289,12 +334,27 @@ For the smoothest animation and drag behavior, use a current Chromium-based brow
 ## Contributing
 
 Contributions, fixes, and thoughtful improvements are welcome.
+<<<<<<< HEAD
 
 1. Fork the repository.
 2. Create a branch for your change: `git checkout -b feature/your-feature`.
 3. Make focused changes and keep the existing code style.
 4. Run `npm run lint` and `npm run build`.
 5. Open a pull request that clearly explains the change and includes screenshots for visual updates.
+=======
+
+1. Fork the repository.
+2. Create a branch for your change: `git checkout -b feature/your-feature`.
+3. Make focused changes and keep the existing code style.
+4. Run `npm run lint` and `npm run build`.
+5. Open a pull request that clearly explains the change and includes screenshots for visual updates.
+
+## Contact
+
+- GitHub: [@Spicychickenlolipop](https://github.com/Spicychickenlolipop)
+- LinkedIn: [Anirudra Kisku](https://www.linkedin.com/in/anirudra-kisku-4335821b5/)
+- Email: [kisku.anirudra@gmail.com](mailto:kisku.anirudra@gmail.com)
+>>>>>>> 77a22c7 (fix back button)
 
 ## License
 

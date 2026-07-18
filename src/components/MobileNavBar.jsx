@@ -1,11 +1,13 @@
 import { ChevronLeft } from "lucide-react";
-import { mobileAppTitles } from "#constants";
+import { locations, mobileAppTitles } from "#constants";
+import useLocationStore from "#store/location";
 import useWindowStore from "#store/window";
 import { useIsMobile } from "../hooks/useIsMobile";
 
 const MobileNavBar = () => {
   const isMobile = useIsMobile();
-  const { windows, closeAllWindows } = useWindowStore();
+  const { windows, closeWindow } = useWindowStore();
+  const { activeLocation, setActiveLocation } = useLocationStore();
 
   if (!isMobile) return null;
 
@@ -22,10 +24,18 @@ const MobileNavBar = () => {
   const topKey = topEntry[0];
   const title = mobileAppTitles[topKey] ?? topKey;
 
-  const goHome = (e) => {
+  const goBack = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    closeAllWindows();
+
+    // Finder navigation is a state within the same window, so restore its
+    // parent folder before dismissing the Finder itself.
+    if (topKey === "finder" && activeLocation?.type !== "work") {
+      setActiveLocation(locations.work);
+      return;
+    }
+
+    closeWindow(topKey);
   };
 
   return (
@@ -37,12 +47,11 @@ const MobileNavBar = () => {
       <button
         type="button"
         className="ios-back-btn"
-        onPointerDown={goHome}
-        onClick={goHome}
-        aria-label="Back to Home"
+        onClick={goBack}
+        aria-label="Go back"
       >
         <ChevronLeft size={22} strokeWidth={2.5} />
-        <span>Home</span>
+        <span>Back</span>
       </button>
       <h2 className="ios-nav-title">{title}</h2>
       <div className="ios-nav-spacer" aria-hidden="true" />

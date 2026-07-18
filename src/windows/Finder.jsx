@@ -122,16 +122,6 @@ const handleDelete = (item) => {
         <div className="finder-main flex flex-col flex-1 min-h-0 min-w-0">
           <div className="finder-toolbar">
             <p className="finder-path">{activeLocation?.name ?? "Portfolio"}</p>
-            {(locations.work.children.some((p) => p.id === activeLocation?.id) ||
-              activeLocation?.isTrash) && (
-              <button
-                type="button"
-                className="finder-back-btn"
-                onClick={() => setActiveLocation(locations.work)}
-              >
-                ← Back
-              </button>
-            )}
           </div>
 
           <ul className="finder-content content">
