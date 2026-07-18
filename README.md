@@ -8,8 +8,6 @@ Built around a macOS-inspired interface, this portfolio lets visitors explore pr
 [![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](https://vite.dev/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 
-<<<<<<< HEAD
-
 <img width="1536" height="785" alt="image" src="https://github.com/user-attachments/assets/285b0dc2-6403-4b55-8730-0257db21a3c3" />
 
 
@@ -26,7 +24,6 @@ Built around a macOS-inspired interface, this portfolio lets visitors explore pr
 - [Customizing the portfolio](#customizing-the-portfolio)
 - [Deployment](#deployment)
 - [Accessibility and browser support](#accessibility-and-browser-support)
-- [Contributing](#contributing)
 
 ## Overview
 
@@ -97,7 +94,6 @@ The experience is not just a visual mockup. Its windows can be opened, focused, 
 - Lightweight static architecture: no backend is required for deployment.
 - Smooth motion and interactions powered by GSAP and `@gsap/react`.
 
->>>>>>> 77a22c7 (fix back button)
 ## Explore the portfolio
 
 ### Desktop
@@ -331,31 +327,3 @@ Interactive mobile app icons include accessible labels, and decorative icon imag
 
 For the smoothest animation and drag behavior, use a current Chromium-based browser, Firefox, or Safari. The site remains a standard responsive web application; no native desktop software is required.
 
-## Contributing
-
-Contributions, fixes, and thoughtful improvements are welcome.
-<<<<<<< HEAD
-
-1. Fork the repository.
-2. Create a branch for your change: `git checkout -b feature/your-feature`.
-3. Make focused changes and keep the existing code style.
-4. Run `npm run lint` and `npm run build`.
-5. Open a pull request that clearly explains the change and includes screenshots for visual updates.
-=======
-
-1. Fork the repository.
-2. Create a branch for your change: `git checkout -b feature/your-feature`.
-3. Make focused changes and keep the existing code style.
-4. Run `npm run lint` and `npm run build`.
-5. Open a pull request that clearly explains the change and includes screenshots for visual updates.
-
-## Contact
-
-- GitHub: [@Spicychickenlolipop](https://github.com/Spicychickenlolipop)
-- LinkedIn: [Anirudra Kisku](https://www.linkedin.com/in/anirudra-kisku-4335821b5/)
-- Email: [kisku.anirudra@gmail.com](mailto:kisku.anirudra@gmail.com)
->>>>>>> 77a22c7 (fix back button)
-
-## License
-
-No license has been specified for this repository. Before reusing the code, design, or personal assets, please contact the author for permission.
